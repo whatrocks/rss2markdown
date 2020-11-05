@@ -1,0 +1,3 @@
+# Joel on Software
+## Joel Spolsky
+Rewind to the turn of the millennium, when Windows programming ruled the world, the dotcoms were doomed, and managing large software projects still suffered from the same problems as they did back at IBM during the Mythical Man-Month era (as they still do now). Hyperbolic and hilarious, Joel tears apart the tropes and renders his own creed for programming, managing, and successfully making things with other people on computers. The hint of web programming at the end of the book is a prescient glimmer of today’s software landscape, and yet mobile is never discussed - fascinating to consider what might already be in our hands but not yet in our focus.

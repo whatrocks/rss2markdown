@@ -1,0 +1,3 @@
+# The Mythical Man-Month: Essays on Software Engineering
+## Frederick P. Brooks Jr.
+Forty-five years later, and we’re still in the programming tar pit - although thankfully with a few more implements of creative destruction than Brooks and his team had at IBM building OS/360 in the 1970s. Aspects of this book are woefully dated, but the engineering management challenges remain devastatingly relevant, especially for anyone working on large distributed software development teams. Thank goodness for better tooling nowadays - that we’re not reviewing stacktraces with pencil and paper or only getting to test our code for two hours a day in batches - but it’s also fascinating to see what was still accomplished by the IBM mainframe developers with these constraints.
