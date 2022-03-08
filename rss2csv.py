@@ -15,13 +15,10 @@ ASSETS_DIR="/Assets"
 
 books = json.loads(json.dumps(xmltodict.parse(requests.get(GOODREADS_RSS_URL).text)))
 
-
 lines = []
 writer = csv.writer(open(f'{ROOT_DIR}{BOOKS_DIR}/2021.csv', 'w'))
 for book in books["rss"]["channel"]["item"]:
-    # parse the feed
-    print(book)
-    # filename = f'{title}-{book["author_name"]}.md'
+    # print(book)
     isbn = book['isbn']
     if isbn == None:
         isbn = ""
@@ -48,43 +45,5 @@ for book in books["rss"]["channel"]["item"]:
         review_link = ""
 
     writer.writerow([isbn, cover_img_url, title, author_name, read_at, published_at, review, review_link])
-    
-
-    # TODO: determine if we should skip it or not based on if we have the file or not
-    # since we don't want to overwrite existing things
-    
-    # save the cover art
-    # r = requests.get(img_url, stream=True)
-    # if r.status_code == 200:
-    #     r.raw.decode_content = True
-    #     with open(f'{ROOT_DIR}{ASSETS_DIR}/Books/{title}.jpg', 'wb') as img:
-    #         shutil.copyfileobj(r.raw, img)
-    
-    # # write our markdown file
-    # with open(f'{ROOT_DIR}{BOOKS_DIR}/{filename}', 'w') as f:
-    #     short_name = f'{title}.jpg'
-    #     review = book["user_review"]
-    #     if review == None:
-    #         review = ""
-    #     f.write(f'# {title}\n## {book["author_name"]}\n\n{book["user_review"]}\n\n![[{short_name}]]')
-    #     f.close()
-
-# print("now fetching blog posts...")
-
-# BLOG_RSS_URL="https://www.charlieharrington.com/rss.xml"
-# BLOG_DIR="/Blog"
-
-# maybe i should just get this directly from the other directory when i publish things
-# make a script to do this.
-
-# posts = json.loads(json.dumps(xmltodict.parse(requests.get(BLOG_RSS_URL).text)))
-# for post in posts["rss"]["channel"]["item"]:
-#     # parse the feed
-#     title = post["title"].split(' (', 1)[0]
-#     filename = f'{title}.md'
-#     # write our markdown file
-#     with open(f'{ROOT_DIR}{BLOG_DIR}/{filename}', 'w') as f:
-#         f.write(f'# {title}\n\n{post["content:encoded"]}\n')
-#         f.close()
 
 print("DONE!")
