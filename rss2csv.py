@@ -4,7 +4,7 @@ import xmltodict
 import csv
 import shutil
 
-print("BEGIN running rss2markdown script...")
+print("BEGIN running rss2csv script...")
 
 print("fetching goodreads reviews...")
 
